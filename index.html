@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style/style.css">
+    <title>Jeu du dé</title>
+</head>
+<body>
+    <div class="plateau container row">
+        <div class="text-center"><img src="https://img.icons8.com/plasticine/50/000000/plus.png"/>NOUVELLE PARTIE</div>
+        <div class="col">
+            <div class="text-center">
+                <div>JOUEUR 1</div>
+                <span>0</span> <!-- score global --> 
+            </div>
+            <div class="current text-center">
+                <div>Score du tour</div>
+                <span>0</span> <!-- score temporaire -->
+            </div>
+        </div>
+        <div class="col">
+            <div class="text-center">
+                <div>JOUEUR 1</div>
+                <span>0</span> <!-- score global --> 
+            </div>
+            <div class="current text-center">
+                <div>Score du tour</div>
+                <span>0</span> <!-- score temporaire -->
+            </div>
+        </div>
+        <div>
+            <div class="mt-4 text-center"> <!-- ROLL DICE -->
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/refresh--v1.png"/> Lancer le dé
+            </div> 
+            <div class="text-end mt-3"> <!-- HOLD -->
+                <img src="https://img.icons8.com/windows/32/000000/checked--v1.png"/> Fin du tour
+            </div> 
+        </div>
+    </div>
+    <script src="Script/script.js"></script>
+</body>
+</html>
