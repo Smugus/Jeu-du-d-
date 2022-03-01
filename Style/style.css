@@ -9,6 +9,7 @@ body {
     margin-top: 30vh;
     border-radius: 10px;
     padding: 40px;
+    position: relative;
 }
 
 .current {
@@ -21,6 +22,18 @@ body {
     padding: 5px;
 }
 
+.current-turn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    transform: translate(-82%, -50%);
+    font-size: 3em;
+    color: rgb(223, 47, 47);
+}
+
 .roll-result {
     border: 2px solid black;
     width: 50px;
@@ -28,7 +41,7 @@ body {
     padding: 10px;
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
@@ -47,11 +60,22 @@ body {
 
 .victory-window {
     position: absolute;
-    top: 50%;
+    top: 73%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(68, 107, 186);
     color: white;
-    padding: 50px;
-    max-width: 600px;
+    padding: 85px;
+    width: 800px;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+}
+
+.global-score-display {
+    font-size: 2em;
+}
+
+.action-btn:hover {
+    cursor: pointer;
 }

@@ -10,39 +10,44 @@
 </head>
 <body>
     <div class="plateau container row">
-        <div class="text-center" id="new"><img src="https://img.icons8.com/plasticine/50/000000/plus.png"/>NOUVELLE PARTIE</div>
-        <div class="col">
+        <div class="text-center" id="new">
+            <span class="action-btn"><img src="https://img.icons8.com/plasticine/50/000000/plus.png"/>NOUVELLE PARTIE</span>
+        </div>
+        <div class="col player-info">
             <div class="text-center">
                 <div>JOUEUR 1</div>
-                <span id="global-score1">0</span> <!-- score global --> 
+                <span id="global-score1" class="global-score-display">0</span> <!-- score global --> 
             </div>
             <div class="current text-center">
                 <div>Score du tour</div>
                 <span id="temp-score1">0</span> <!-- score temporaire -->
             </div>
         </div>
-        <div class="col">
+        <div class="col player-info">
             <div class="text-center">
-                <div>JOUEUR 1</div>
-                <span id="global-score2">0</span> <!-- score global --> 
+                <div>JOUEUR 2</div>
+                <span id="global-score2" class="global-score-display">0</span> <!-- score global --> 
             </div>
             <div class="current text-center">
                 <div>Score du tour</div>
                 <span id="temp-score2">0</span> <!-- score temporaire -->
             </div>
         </div>
+        <div class="current-turn" id="current-turn">></div>
         <div class="roll-result" id="result">0</div>
-        <div>
-            <div class="mt-4 text-center" id="roll"> <!-- ROLL DICE -->
+        <div class="text-center mt-4">
+            <span class="action-btn text-center" id="roll"> <!-- ROLL DICE -->
                 <img src="https://img.icons8.com/ios-glyphs/30/000000/refresh--v1.png"/> Lancer le dé
-            </div> 
-            <div class="text-end mt-3" id="end"> <!-- HOLD -->
-                <img src="https://img.icons8.com/windows/32/000000/checked--v1.png"/> Fin du tour
-            </div> 
+            </span>
         </div>
+        <div class="text-end mt-4">
+            <span class="action-btn text-end" id="end"> <!-- HOLD -->
+                <img src="https://img.icons8.com/windows/32/000000/checked--v1.png"/> Fin du tour
+            </span> 
+        </div>   
+        <div class="victory-window" id="victory"></div>
     </div>
     <div class="game-info" id="game-info"></div>
-    <div id="victory"></div>
     <script src="Script/script.js"></script>
 </body>
 </html>

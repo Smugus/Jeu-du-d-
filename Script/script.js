@@ -8,14 +8,19 @@ let roll = document.getElementById('roll');
 let result = document.getElementById('result')
 let end = document.getElementById('end');
 let info = document.getElementById('game-info');
-let victory = document.getElementById('victory')
+let victory = document.getElementById('victory');
+let currentTurn = document.getElementById('current-turn');
 
-let turn = Math.round(Math.random() * (2 - 1) + 1);
+let turn;
 let tempScore = 0;
 let globalScore1 = 0;
 let globalScore2 = 0;
 
-info.textContent = `Le joueur ${turn} joue en premier !`
+function firstPlayer() {
+    turn = Math.round(Math.random() * (2 - 1) + 1);
+    info.style.background = "rgb(5, 149, 60)";
+    info.textContent = `Le joueur ${turn} joue en premier !`;
+}
 
 function newGame() {
     tempScore = 0;
@@ -23,7 +28,10 @@ function newGame() {
     globalScore2 = 0;
     tpScorePlayer1.textContent = tempScore;
     tpScorePlayer2.textContent = tempScore;
-    glScorePlayer[turn].textContent = globalScore[turn];
+    glScorePlayer1.textContent = globalScore1;
+    glScorePlayer2.textContent = globalScore2;
+    firstPlayer ()
+    victory.style.display = "none";
 }
 
 function rollDice() {
@@ -52,8 +60,10 @@ function tempScoring() {
         info.textContent = `Dé 1 : Pas de chance ! Le joueur ${turn} marque 0 point et passe son tour !`;
         if (turn === 1) {
             turn = 2;
+            turnCheking();
         } else {
             turn = 1;
+            turnCheking();
         }
     }
 }
@@ -66,7 +76,9 @@ function turnEnd() {
         info.textContent = `Le joueur 1 a marqué ${tempScore}, la main passe au joueur 2 !`
         tempScore = 0;
         tpScorePlayer1.textContent = tempScore;
+        victoryCheking();
         turn = 2;
+        turnCheking();
     } else {
         globalScore2 += tempScore;
         glScorePlayer2.textContent = globalScore2;
@@ -74,16 +86,33 @@ function turnEnd() {
         info.textContent = `Le joueur 2 a marqué ${tempScore}, la main passe au joueur 1 !`
         tempScore = 0;
         tpScorePlayer2.textContent = tempScore;
+        victoryCheking();
         turn = 1;
+        turnCheking();
     }   
 }
 
 // Condition de victoire
-if (globalScore1 >= 100 || globalScore2 >= 100) {
-    victory.setAttribute('class', '.victory-window')
-    victory.textContent = `Le joueur ${turn} a atteint 100 points en premier et remporte la victoire !`;
+function victoryCheking() {
+    if (globalScore1 >= 20 || globalScore2 >= 20) {
+        victory.style.display = "flex";
+        victory.textContent = `Le joueur ${turn} a atteint 100 points en premier et remporte la victoire !`;
+    }
 }
 
+// current turn
+function turnCheking() {
+    if (turn === 1) {
+        currentTurn.textContent = "←";
+    } else {
+        currentTurn.textContent = "→";
+    }
+} 
+
+firstPlayer();
+turnCheking();
 newG.addEventListener('click', newGame);
 roll.addEventListener('click', tempScoring);
 end.addEventListener('click', turnEnd);
+
+console.log(turn)
