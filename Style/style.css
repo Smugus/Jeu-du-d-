@@ -1,12 +1,31 @@
 body {
     background-color: rgb(31, 31, 31);
+    font-family: 'Lato', sans-serif;
+}
+
+.rules-btn {
+    width: 200px;
+}
+
+.rules {
+    background: rgb(68, 107, 186);
+    color: white;
+    width: 900px;
+    border-radius: 20px;
+    padding: 30px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
 }
 
 .plateau {
     background-color: rgb(241, 239, 230);
     max-width: 900px;
     margin: auto;
-    margin-top: 30vh;
+    margin-top: 20vh;
     border-radius: 10px;
     padding: 40px;
     position: relative;
@@ -76,6 +95,6 @@ body {
     font-size: 2em;
 }
 
-.action-btn:hover {
+.action-btn, .rules-btn, .rules-closing {
     cursor: pointer;
 }

@@ -9,6 +9,19 @@
     <title>Jeu du dé</title>
 </head>
 <body>
+    <div class="rules-btn btn-success rounded m-2 text-center p-2" id="rules-btn">Règles du jeu</div>
+    <div class="rules" id="rules">
+        <ul>
+            <li>La partie se déroule avec 2 joueurs, les joueurs jouent à tour de rôle.</li>
+            <li>Durant le tour d'un joueur, il peut lancer un dé allant de 1 à 6. Le résultat s'ajoute à son score du tour.</li>
+            <li>Le joueur peut lancer autant de dés qu'il veut durant son tour pour augmenter son score du tour</li>
+            <li>Cependant, si le joueur fait un <b>"1"</b>, son score du tour tombe à <b>0</b> et la main passe !</li>
+            <li>Le joueur peut terminer son tour avant que cela n'arrive, ce qui validera son score du tour et s'ajoutera à son score global !</li>
+            <li>Le premier joueur a atteindre 100 points avec son score global remporte la victoire !</li>
+        </ul>
+        <p class="rules-closing text-center" id="close">Commencer</p>
+        
+    </div>
     <div class="plateau container row">
         <div class="text-center" id="new">
             <span class="action-btn"><img src="https://img.icons8.com/plasticine/50/000000/plus.png"/>NOUVELLE PARTIE</span>
@@ -34,7 +47,7 @@
             </div>
         </div>
         <div class="current-turn" id="current-turn">></div>
-        <div class="roll-result" id="result">0</div>
+        <div class="roll-result" id="result">-</div>
         <div class="text-center mt-4">
             <span class="action-btn text-center" id="roll"> <!-- ROLL DICE -->
                 <img src="https://img.icons8.com/ios-glyphs/30/000000/refresh--v1.png"/> Lancer le dé

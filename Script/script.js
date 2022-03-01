@@ -10,6 +10,9 @@ let end = document.getElementById('end');
 let info = document.getElementById('game-info');
 let victory = document.getElementById('victory');
 let currentTurn = document.getElementById('current-turn');
+let rules = document.getElementById('rules')
+let rulesBtn = document.getElementById('rules-btn')
+let rulesClosing = document.getElementById('close');
 
 let turn;
 let tempScore = 0;
@@ -94,7 +97,7 @@ function turnEnd() {
 
 // Condition de victoire
 function victoryCheking() {
-    if (globalScore1 >= 20 || globalScore2 >= 20) {
+    if (globalScore1 >= 100 || globalScore2 >= 100) {
         victory.style.display = "flex";
         victory.textContent = `Le joueur ${turn} a atteint 100 points en premier et remporte la victoire !`;
     }
@@ -109,10 +112,22 @@ function turnCheking() {
     }
 } 
 
-firstPlayer();
-turnCheking();
 newG.addEventListener('click', newGame);
 roll.addEventListener('click', tempScoring);
 end.addEventListener('click', turnEnd);
 
-console.log(turn)
+rulesBtn.addEventListener('click', () => {
+    if (rules.style.display === "inline") {
+        rules.style.display = "none";
+    } else {
+        rules.style.display = "inline"
+    }
+});
+
+rulesClosing.addEventListener('click', () => {
+    rules.style.display = "none";
+});
+
+
+firstPlayer();
+turnCheking();
